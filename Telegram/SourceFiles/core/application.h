@@ -111,6 +111,10 @@ class Environment;
 
 namespace Core {
 
+namespace Plugins {
+class Manager;
+} // namespace Plugins
+
 struct LocalUrlHandler;
 class Settings;
 class Tray;
@@ -227,6 +231,11 @@ public:
 	// Databases.
 	[[nodiscard]] Storage::Databases &databases() {
 		return *_databases;
+	}
+
+	// Plugins component.
+	[[nodiscard]] Plugins::Manager &plugins() const {
+		return *_plugins;
 	}
 
 	// Domain component.
@@ -410,6 +419,7 @@ private:
 	const std::unique_ptr<Webrtc::Environment> _mediaDevices;
 
 	const std::unique_ptr<Storage::Databases> _databases;
+	const std::unique_ptr<Plugins::Manager> _plugins;
 	const std::unique_ptr<Ui::Animations::Manager> _animationsManager;
 	crl::object_on_queue<Stickers::EmojiImageLoader> _emojiImageLoader;
 	base::Timer _clearEmojiImageLoaderTimer;

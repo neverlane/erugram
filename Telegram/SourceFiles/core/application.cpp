@@ -22,6 +22,7 @@ https://github.com/telegramdesktop/tdesktop/blob/master/LEGAL
 #include "base/timer.h"
 #include "base/unixtime.h"
 #include "core/core_settings.h"
+#include "core/plugins/plugin_manager.h"
 #include "core/update_checker.h"
 #include "core/shortcuts.h"
 #include "core/sandbox.h"
@@ -157,6 +158,7 @@ Application::Application()
 , _batterySaving(std::make_unique<base::BatterySaving>())
 , _mediaDevices(std::make_unique<Webrtc::Environment>())
 , _databases(std::make_unique<Storage::Databases>())
+, _plugins(std::make_unique<Plugins::Manager>())
 , _animationsManager(std::make_unique<Ui::Animations::Manager>())
 , _clearEmojiImageLoaderTimer([=] { clearEmojiSourceImages(); })
 , _audio(std::make_unique<Media::Audio::Instance>())
@@ -419,6 +421,8 @@ void Application::run() {
 			[[maybe_unused]] const auto countriesCopy = countries;
 		});
 	}
+
+	_plugins->start();
 
 	processCreatedWindow(_lastActivePrimaryWindow);
 }

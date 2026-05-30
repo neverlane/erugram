@@ -7,8 +7,8 @@ https://github.com/telegramdesktop/tdesktop/blob/master/LEGAL
 */
 #include "core/plugins/plugin_manager.h"
 
+#include "core/plugins/plugin_api.h"
 #include "base/debug_log.h"
-#include "ui/toast/toast.h"
 #include "settings.h"
 
 #include <sol/sol.hpp>
@@ -174,22 +174,9 @@ void Manager::load(Entry &entry) {
 		sol::lib::utf8,
 		sol::lib::coroutine);
 
-	const auto id = entry.info.id;
-	auto eru = state->create_named_table("eru");
-	eru.set_function("log", [id](
-			sol::this_state ts,
-			sol::variadic_args args) {
-		auto lua = sol::state_view(ts);
-		sol::protected_function tostring = lua["tostring"];
-		auto parts = QStringList();
-		for (auto &&value : args) {
-			const std::string text = tostring(value);
-			parts.push_back(QString::fromUtf8(text.c_str()));
-		}
-		LOG(("Plugin '%1': %2").arg(id, parts.join(' ')));
-	});
-	eru.set_function("toast", [](const std::string &text) {
-		Ui::Toast::Show(QString::fromUtf8(text.c_str()));
+	RegisterApi(*state, ApiContext{
+		.id = entry.info.id,
+		.dataDir = directory() + u"data/"_q + entry.info.id + u"/"_q,
 	});
 
 	const auto result = state->safe_script_file(

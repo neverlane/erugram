@@ -539,6 +539,8 @@ PRIVATE
     core/core_settings_proxy.cpp
     core/core_settings_proxy.h
     core/plugins/plugin.h
+    core/plugins/plugin_api.cpp
+    core/plugins/plugin_api.h
     core/plugins/plugin_manager.cpp
     core/plugins/plugin_manager.h
     core/crash_report_window.cpp

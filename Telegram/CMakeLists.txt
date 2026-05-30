@@ -1731,6 +1731,8 @@ PRIVATE
     settings/sections/settings_notifications_type.h
     settings/sections/settings_passkeys.cpp
     settings/sections/settings_passkeys.h
+    settings/sections/settings_plugins.cpp
+    settings/sections/settings_plugins.h
     settings/settings_power_saving.cpp
     settings/settings_power_saving.h
     settings/sections/settings_premium.cpp

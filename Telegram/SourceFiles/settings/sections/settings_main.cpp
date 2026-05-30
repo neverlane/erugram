@@ -54,6 +54,7 @@ https://github.com/telegramdesktop/tdesktop/blob/master/LEGAL
 #include "settings/sections/settings_folders.h"
 #include "settings/sections/settings_information.h"
 #include "settings/sections/settings_notifications.h"
+#include "settings/sections/settings_plugins.h"
 #include "settings/settings_power_saving.h"
 #include "settings/sections/settings_premium.h"
 #include "settings/sections/settings_privacy_security.h"
@@ -373,6 +374,13 @@ void BuildSectionButtons(SectionBuilder &builder) {
 			.keywords = { u"profile"_q, u"edit"_q, u"information"_q },
 		});
 	}
+
+	builder.addSectionButton({
+		.title = tr::lng_settings_plugins(),
+		.targetSection = PluginsId(),
+		.icon = { &st::menuIconBotCommands },
+		.keywords = { u"plugins"_q, u"lua"_q, u"scripts"_q, u"extensions"_q },
+	});
 
 	builder.addSectionButton({
 		.title = tr::lng_settings_section_notify(),

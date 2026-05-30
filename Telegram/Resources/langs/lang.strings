@@ -679,6 +679,22 @@ https://github.com/telegramdesktop/tdesktop/blob/master/LEGAL
 "lng_settings_mac_warn_before_quit" = "Show warning before quitting with {text}";
 "lng_settings_mac_round_icon" = "Round application icon";
 
+"lng_settings_plugins" = "Plugins";
+"lng_settings_plugins_about" = "Write Lua plugins that extend erugram. Plugins run with full access to the app — only enable code you trust.";
+"lng_settings_plugins_installed" = "Installed plugins";
+"lng_settings_plugins_empty" = "You don't have any plugins yet.";
+"lng_settings_plugins_add" = "Add a plugin";
+"lng_settings_plugins_edit" = "Edit";
+"lng_settings_plugins_delete" = "Delete";
+"lng_settings_plugins_delete_sure" = "Delete plugin \"{name}\"?";
+"lng_settings_plugins_new" = "New plugin";
+"lng_settings_plugins_name" = "Plugin name";
+"lng_settings_plugins_code" = "Plugin code (Lua)";
+"lng_settings_plugins_save" = "Save";
+"lng_settings_plugins_no_name" = "Plugin name can't be empty.";
+"lng_settings_plugins_on" = "On";
+"lng_settings_plugins_off" = "Off";
+"lng_settings_plugins_enable" = "Enabled";
 "lng_settings_experimental" = "Experimental settings";
 "lng_settings_experimental_about" = "Warning! These are experimental settings. Some may not work. Others may break the app. Any of them may disappear in the next version without a trace. Use at your own risk.";
 "lng_settings_experimental_restore" = "Restore default values";

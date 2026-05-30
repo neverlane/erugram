@@ -100,3 +100,9 @@
 [submodule "Telegram/ThirdParty/MicroTeX"]
 	path = Telegram/ThirdParty/MicroTeX
 	url = https://github.com/desktop-app/MicroTeX.git
+[submodule "Telegram/ThirdParty/lua"]
+	path = Telegram/ThirdParty/lua
+	url = https://github.com/lua/lua.git
+[submodule "Telegram/ThirdParty/sol2"]
+	path = Telegram/ThirdParty/sol2
+	url = https://github.com/ThePhD/sol2.git

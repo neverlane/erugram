@@ -29,6 +29,7 @@ include(cmake/lib_ffmpeg.cmake)
 include(cmake/lib_stripe.cmake)
 include(cmake/lib_tgcalls.cmake)
 include(cmake/lib_prisma.cmake)
+include(cmake/lib_lua.cmake)
 include(cmake/td_export.cmake)
 include(cmake/td_iv.cmake)
 include(cmake/td_lang.cmake)
@@ -82,6 +83,7 @@ PRIVATE
     desktop-app::lib_qr
     desktop-app::lib_translate
     desktop-app::lib_webview
+    desktop-app::lib_lua
     desktop-app::lib_ffmpeg
     desktop-app::lib_stripe
     desktop-app::external_rlottie
